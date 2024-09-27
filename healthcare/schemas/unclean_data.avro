@@ -1,0 +1,96 @@
+{
+   "namespace": "healthcare",
+   "name": "unclean_data",
+   "type": "record",
+   "fields": [
+      {
+         "name": "patient_id",
+         "type": {
+            "type": "int",
+            "arg.properties": {
+               "iteration": {
+                  "start": 1
+               }
+            }
+         }
+      },
+      {
+         "name": "age",
+         "type": {
+            "type": "int",
+            "arg.properties": {
+               "range": {
+                  "min": 180,
+                  "max": 1000
+               }
+            }
+         }
+      },
+      {
+         "name": "bmi",
+         "type": {
+            "type": "double",
+            "arg.properties": {
+               "range": {
+                  "min": 18.0,
+                  "max": 40.0
+               }
+            }
+         }
+      },
+      {
+         "name": "blood_pressure",
+         "type": {
+            "name": "blood_pressure",
+            "type": "record",
+            "fields": [
+               {
+                  "name": "systolic",
+                  "type": {
+                     "type": "int",
+                     "arg.properties": {
+                        "range": {
+                           "min": 90,
+                           "max": 180
+                        }
+                     }
+                  }
+               },
+               {
+                  "name": "diastolic",
+                  "type": {
+                     "type": "int",
+                     "arg.properties": {
+                        "range": {
+                           "min": 60,
+                           "max": 120
+                        }
+                     }
+                  }
+               }
+            ]
+         }
+      },
+      {
+         "name": "glucose_level",
+         "type": {
+            "type": "double",
+            "arg.properties": {
+               "range": {
+                  "min": 70.0,
+                  "max": 200.0
+               }
+            }
+         }
+      },
+      {
+         "name": "family_history",
+         "type": {
+            "type": "string",
+            "arg.properties": {
+               "options": ["Yes", "No", "Unknown"]
+            }
+         }
+      }
+   ]
+}
